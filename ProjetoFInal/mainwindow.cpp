@@ -38,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
     if(arduino_is_available){
         arduino->setPortName(arduino_port_name);
-        arduino->open(QIODevice::ReadOnly);
+        arduino->open(QSerialPort::ReadOnly);
         arduino->setBaudRate(QSerialPort::Baud9600);
         arduino->setDataBits(QSerialPort::Data8);
         arduino->setParity(QSerialPort::NoParity);
@@ -53,12 +53,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
     arduino->close();
-}
-
-void MainWindow::readyReadSlot(){
-    while (!arduino->atEnd()){
-        QByteArray data = arduino->readAll();
-    }
 }
 
 void MainWindow::on_pushButton_toggled(bool checked)
