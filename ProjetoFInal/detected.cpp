@@ -2,7 +2,7 @@
 #include "ui_detected.h"
 
 detected::detected(QWidget *parent) :
-    QDialog(parent),
+    QWidget(parent),
     ui(new Ui::detected)
 {
     ui->setupUi(this);

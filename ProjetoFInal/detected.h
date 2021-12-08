@@ -1,13 +1,13 @@
 #ifndef DETECTED_H
 #define DETECTED_H
 
-#include <QDialog>
+#include <QWidget>
 
 namespace Ui {
 class detected;
 }
 
-class detected : public QDialog
+class detected : public QWidget
 {
     Q_OBJECT
 
