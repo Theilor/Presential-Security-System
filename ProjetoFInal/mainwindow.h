@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSerialPort>
+#include <QByteArray>
+#include <QObject>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,5 +23,12 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QSerialPort *arduino;
+    static const quint16 arduino_uno_vendor_id = 9025;
+    static const quint16 arduino_uno_product_id = 67;
+    QString arduino_port_name;
+    bool arduino_is_available;
+    QByteArray serialData;
+    QString serialBuffer;
 };
 #endif // MAINWINDOW_H
