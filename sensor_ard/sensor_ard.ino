@@ -24,7 +24,8 @@ void loop() {
   long distancia = usParaCm(duracaoAlto); 
   
   if (distancia < 50){
-    Serial.println(distancia);
+    Serial.println(1);
+    delay(1000);
   }
 }
 
