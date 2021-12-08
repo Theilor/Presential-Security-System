@@ -23,9 +23,9 @@ void loop() {
   
   long distancia = usParaCm(duracaoAlto); 
   
-  Serial.print("Distancia: ");
-  Serial.print(distancia);
-  Serial.println(" cm");
+  if (distancia < 50){
+    Serial.println(distancia);
+  }
 }
 
 long usParaCm(long duracaoAlto) {

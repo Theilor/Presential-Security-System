@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QSerialPortInfo;
     serialPort = new QSerialPort(this);
     serialPort->setPortName("com1");
     serialPort->setBaudRate(QSerialPort::Baud9600);

@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>detected</class>
- <widget name="detected" class="QDialog">
+ <widget class="QDialog" name="detected">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,6 +13,19 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>40</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>MOVEMENT DETECTED</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
