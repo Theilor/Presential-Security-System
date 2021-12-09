@@ -1,8 +1,8 @@
-
+int pinoBuzzer = 8;
 int pinoTrigger = 12;
 int pinoEcho = 13;
 void setup() {
-  
+  pinMode(pinoBuzzer, OUTPUT);
   pinMode(pinoTrigger, OUTPUT);
   pinMode(pinoEcho, INPUT);
   Serial.begin(9600);
@@ -25,7 +25,11 @@ void loop() {
   
   if (distancia < 50){
     Serial.println(1);
+    for (int x=0; x<5; x++){
+      tone(pinoBuzzer,2000, 100);
+      delay(2);
     delay(1000);
+    }
   }
 }
 
@@ -36,3 +40,4 @@ long usParaCm(long duracaoAlto) {
   return d;
   
 }
+
