@@ -57,14 +57,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_toggled(bool checked)
 {
-    QByteArray data;
-    arduino->readyRead();
-    data=arduino->readAll();
-        if (data != NULL){
-            detected *dtc = new detected(this);
-            dtc->setAttribute(Qt::WA_DeleteOnClose);
-            dtc->show();
-            data = NULL;
-            }
+    QByteArray data = NULL;
+    while (data == NULL){
+    arduino->waitForReadyRead(1);
+    data = arduino->readAll();
+    if (data != NULL){
+        detected *dtc = new detected(this);
+        dtc->setAttribute(Qt::WA_DeleteOnClose);
+        dtc->show();
+    }
+    }
 }
+
 

@@ -21,6 +21,7 @@ public:
 private slots:
     void on_pushButton_toggled(bool checked);
 
+
 private:
     Ui::MainWindow *ui;
     QSerialPort *arduino;
